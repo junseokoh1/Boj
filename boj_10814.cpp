@@ -39,3 +39,31 @@ int main() {
       cout<<(*iter).first<<" "<<iter->second<<'\n';
 
 }
+
+
+//다른 사람이 제출한 정답!
+
+#include<iostream>
+#include<string>
+#include<vector>
+
+using namespace std;
+
+int N;
+vector<string> n[201];
+
+int main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cin >> N;
+	for (int i = 0, a; i < N; i++) {
+		string s;
+		cin >> a >> s;
+		n[a].push_back(s);
+	}
+	for (int i = 1; i < 201; i++)
+		for(string &s : n[i])
+			cout << i << ' ' << s << '\n';
+
+	return 0;
+}

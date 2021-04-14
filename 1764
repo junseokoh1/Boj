@@ -1,0 +1,37 @@
+#include <iostream>
+#include <map>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    map<string, int> Map;
+    vector<string> nameArr;
+
+    int N, M;
+    string name;
+    cin>>N>>M;
+
+    for(int i=0; i<N; i++){
+        cin>>name;
+        Map[name] = 1;
+    }
+
+    for(int i=0; i<M; i++){
+        cin>>name;
+        if(Map[name] == 1)
+          nameArr.push_back(name);
+    }
+
+    sort(nameArr.begin(), nameArr.end());
+
+    cout<<nameArr.size()<<'\n';
+    for(auto v : nameArr)
+      cout<<v<<'\n';
+
+}
